@@ -1,0 +1,389 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #2E3B4E; /* Darker shade for better contrast */
+  color: #ffffff;
+  border-bottom: 2px solid #444;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Increase spacing between filters */
+}
+
+.filter {
+  font-weight: bolder;
+}
+
+.DeptFilter {
+ font-weight: bolder;
+}
+
+.calendar {
+  padding: 20px;
+}
+
+.date-picker, .department-filter {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  transition: background-color 0.3s ease;
+}
+
+.date-picker:hover, .department-filter:hover {
+  background-color: #e2e2e2;
+}
+
+.chart-container {
+  display: grid;
+  grid-template-areas:
+    'pie-chart line-chart'
+    'bar-chart bar-chart';
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  background-color: #f3f3f3; /* Light background for better focus on charts */
+  border-radius: 10px;
+}
+
+.pie {
+  display: flex;
+  gap: 10px;
+}
+
+.BreakdownText {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.pie-chart {
+  width: 50%;
+}
+
+.RevenueText {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.donut-chart {
+  width: 50%;
+}
+
+.LineText {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.BarText {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.TableText {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.chart {
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.dashboard-name {
+  font-size: 26px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Ensure the container takes full width and adjusts content */
+.chart-container {
+  display: grid;
+  grid-template-areas:
+    'pie-chart line-chart'
+    'bar-chart table-container';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pie {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.pie-chart,
+.donut-chart,
+.line-chart,
+.bar-chart,
+.table-container {
+  flex: 1;
+  min-width: 0; /* Prevent charts from overflowing */
+}
+
+.chart {
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 100%;
+}
+
+/* Adjust layout for smaller screens */
+@media (max-width: 1024px) {
+  .chart-container {
+    grid-template-areas:
+      'pie-chart'
+      'line-chart'
+      'bar-chart'
+      'table-container';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .pie {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    grid-template-areas:
+      'pie-chart'
+      'line-chart'
+      'bar-chart'
+      'table-container';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .pie-chart,
+  .donut-chart {
+    width: 100%;
+  }
+}
+
+/* Reset any potential issues with body overflow */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Main app container */
+.App {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the header takes full width and adjusts content */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  background-color: #2E3B4E; /* Darker shade for better contrast */
+  color: #ffffff;
+  border-bottom: 2px solid #444;
+  box-sizing: border-box;
+}
+
+/* Chart container should take full width and avoid overflow */
+.chart-container {
+  display: grid;
+  grid-template-areas:
+    'pie line-chart'
+    'bar table-container';
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+
+.pie {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chart {
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Custom styling for the DataTable */
+.table-container {
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.p-datatable-header {
+  font-size: 1.2rem;
+  color: #444;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.p-datatable {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background-color:rgba(54, 162, 235, 0.6);
+  color: #333;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  padding: 12px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  transition: background-color 0.3s ease;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background-color: #f9f9f9;
+}
+
+.p-button-rounded {
+  background-color: rgba(54, 162, 235, 0.6);
+  border: none;
+  color: #fff;
+}
+
+.p-button-rounded:hover {
+  background-color: #0056b3;
+}
+
+/* Search input styling */
+.p-input-icon-left .p-inputtext {
+  border-radius: 20px;
+  padding: 8px 15px;
+  width: 200px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.p-input-icon-left .p-inputtext:focus {
+  border-color: #007bff;
+}
+
+/* Align the search bar */
+.p-input-icon-left {
+  display: flex;
+  align-items: center;
+}
+
+.p-input-icon-left i {
+  margin-right: 5px;
+}
+
+/* Pagination styling */
+.p-paginator .p-paginator-current {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  color: #555;
+  width: 36px;
+  height: 36px;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page:hover {
+  background-color: #0056b3;
+}
+
+
+/* Responsive design adjustments */
+@media (max-width: 1024px) {
+  .chart-container {
+    grid-template-areas:
+      'pie'
+      'line-chart'
+      'bar';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .pie {
+    flex-direction: column;
+  }
+
+  .chart {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+
